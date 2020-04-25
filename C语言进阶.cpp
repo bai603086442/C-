@@ -264,24 +264,155 @@
 //}
 
 //可以完成互换功能
-void exchange(int* p, int* q)
-{
-	int t;
+//void exchange(int* p, int* q)
+//{
+//	int t;
+//
+//	t = *p;    // p是int*， *p是int
+//	*p = *q;
+//	*q = t;
+//}
+//
+//int main(void)
+//{
+//	int a = 3;
+//	int b = 5;
+//	
+//	exchange(&a, &b);
+//
+//	printf("a=%d b=%d\n", a, b);
+//
+//}
 
-	t = *p;    // p是int*， *p是int
-	*p = *q;
-	*q = t;
+/*  
+	*号的含义
+	1.乘法
+	2.定义指针变量
+		int* p; //定义了一个名字叫p的变量，int*表示p只能存放int变量地址
+	3.指针运算符
+		该运算符放在已经定义好的指针变量的前面
+		如果p是一个已经定义好的指针变量，则*p表示以p的内容为地址的变量
+
+		int* p;  与  *p = 5; 
+		这两个*号的含义不一样
+*/
+
+//复习
+//int main(void)
+//{
+//	int* p;
+//	int i = 5;
+//	char ch = 'A';  //C语言规定 单个字符用单引号括起来;  字符串用双引号括起来
+//
+//	p = &i;  //正确 
+//	*p = 99;
+//	printf("i=%d, *p=%d\n", i, *p);
+//	//p = &ch; //错误
+//	//p = ch;  //错误
+//	//p = 5; //错误
+//}
+
+//void swap(int* p, int* q)//形参的名字是p和q，接收数据的是p和q
+//{
+//	int t;
+//
+//	t = *p;
+//	*p = *q;
+//	*q = t;
+//}
+//
+//int main(void)
+//{
+//	int a = 3;
+//	int b = 5;
+//
+//	swap(&a, &b);
+//	printf("a = %d, b = %d\n", a, b);
+//
+//	return 0;
+//}
+
+//指针和数组
+//int main(void)
+//{
+//	int a[5]; //a是数组名，5是数组元素的个数 元素就是变量 a[0] -- a[4]
+//	//int a[3][4]  //3行4列, a[0][0]是第一个元素，a[i][j]是第i+1行j+1列元素
+//	int b[5];
+//	//一维数组名是指针常量，它存放的是一维数组第一个元素的地址
+//	//a = b;  //错误 a是常量
+//
+//	printf("%#x\n", &a[0]); //0xeff85c
+//	printf("%#x\n", a);		//0xeff85c
+//	
+//	return 0;
+//}
+
+/*
+	下标和指针的关系
+	如果p是个指针变量，则p[i] 永远等价于 *(p+i)
+*/
+
+
+//确定一个函数需要2个参数  1.数组第一个元素的地址，数组的长度
+
+//f函数可以输出任何一个一维数组内容
+//void f(int* pArr, int len)
+//{
+//	int i;
+//
+//	for (i = 0; i < len; ++i)
+//		printf("%d ", *(pArr + i));  //*pArr *(pArr+1) *(pArr+2)
+//	printf("\n");
+//}
+//
+//int main(void)
+//{
+//	int a[5] = { 1,2,3,4,5 };
+//	int b[6] = { -1,-2,-3,-4,5,-6 };
+//	int c[100] = { 1,99,22,33 };
+//
+//	f(a, 5); //a是int*类型
+//
+//	return 0;
+//}
+
+//void f(int* pArr, int len)
+//{
+//	pArr[3] = 88;  //pArr[3] 等价于 *(pArr+3)
+//}
+//
+//int main(void)
+//{
+//	int a[6] = { 1,2,3,4,5,6 };
+//
+//	printf("%d\n", a[3]);  //4
+//	f(a, 6);  
+//	printf("%d\n", a[3]);  //a[3]等于*(a+3),*(a+3)代表第四个元素  88
+//
+//	return 0;
+//}
+////381行pArr[3] 388,390行a[3]是同一个变量
+
+
+void f(int* pArr, int len)
+{
+	int i;
+
+	for (i = 0; i < len; ++i)
+		printf("%d ", pArr[i]);  //*(pArr+i) 等价于 pArr[i] 也等价于b[i] 也等价于*(b+i)
+	printf("\n");
 }
 
 int main(void)
 {
-	int a = 3;
-	int b = 5;
-	
-	exchange(&a, &b);
+	int a[5] = { 1,2,3,4,5 };
+	int b[6] = { -1,-2,-3,-4,5,-6 };
+	int c[100] = { 1,99,22,33 };
 
-	printf("a=%d b=%d\n", a, b);
+	f(b, 6);
 
+	return 0;
 }
+
 
 
