@@ -1,5 +1,6 @@
 ﻿#include <stdio.h>
 #include <malloc.h>
+#include <string.h>
 //int f(void) //括号中的void表示该函数不能接受数据 int表示函数返回值是int类型
 //{
 //	return 10;  //向主调函数返回10
@@ -683,29 +684,126 @@ p,q,r本身所占的字节数是否一样
 //}
 
 //动态内存可以跨函数使用示例
-void f(int** q)
+//void f(int** q)
+//{
+//	*q = (int*)malloc(sizeof(int));  //sizeof(数据类型)返回值是该数据类型所占的字节数
+//	//等价于 p = (int*)malloc(sizeof(int))
+//
+//	//q = 5; //error
+//	//*q = 5; //p = 5; error
+//	**q = 5; //*p = 5;
+//
+//}
+//
+//int main(void)
+//{
+//	int* p;
+//	
+//	f(&p);
+//	printf("%d\n", *p);
+//
+//	return 0;
+//}
+
+//结构体
+//struct Student
+//{
+//	int age;
+//	float score;
+//	char sex;
+//};
+//
+//int main(void)
+//{
+//	struct Student st = {80, 66.6, 'F'}; //初始化 定义同时赋值
+//
+//	struct Student st2;
+//	st2.age = 10;
+//	st2.score = 88;
+//	st2.sex = 'F';
+//
+//	printf("%d %f %c\n", st.age, st.score, st.sex);
+//	printf("%d %f %c\n", st2.age, st2.score, st2.sex);
+//
+//	return 0;
+//}
+
+//struct Student
+//{
+//	int age;
+//	float score;
+//	char sex;
+//};
+//
+//int main(void)
+//{
+//	struct Student st = { 80, 66.6f, 'F' };
+//	struct Student* pst = &st; 
+//
+//	//st.age = 10;
+//	//pst->age = 88; //pst->age在计算机内部会被转换成 (*pst).age
+//
+//	pst->age = 88;
+//	st.score = 66.6f;
+//	printf("%d %f\n", st.age, pst->score); //88 66.599998 浮点数不能准确存储
+//
+//	return 0;
+//	
+//}
+
+//struct Student
+//{
+//	int age;
+//	char sex;
+//	char name[100];
+//}; //封号不能省
+//
+//int main(void)
+//{
+//	struct Student st = { 20, 'F', "小红" };
+//	struct Student* pst = &st;
+//
+//	printf("%d %c %s\n", st.age, st.sex, st.name);
+//	printf("%d %c %s\n", pst->age, pst->sex, pst->name); //pst->age 转化成 (*pst).age 等于st.age
+//}
+
+struct Student
 {
-	*q = (int*)malloc(sizeof(int));  //sizeof(数据类型)返回值是该数据类型所占的字节数
-	//等价于 p = (int*)malloc(sizeof(int))
+	int age;
+	char sex;
+	char name[100];
+}; 
 
-	//q = 5; //error
-	//*q = 5; //p = 5; error
-	**q = 5; //*p = 5;
+//此函数无法修改主函数 st的值   错误
+//void InputStudent(struct Student stu)
+//{
+//	stu.age = 10;
+//	strcpy_s(stu.name, "张三"); //不能写成 stu.name = "张三";
+//	stu.sex = 'F';
+//}
 
+void InputStudent(struct Student* pstu) //pstu只占四个字符
+{
+	(*pstu).age = 10;
+	strcpy_s(pstu->name, "张三");
+	pstu->sex = 'F';
+}
+
+void OutputStudent(struct Student* pst)
+{
+	printf("%d %c %s\n", pst->age, pst->sex, pst->name);
 }
 
 int main(void)
 {
-	int* p;
+	struct Student st;
 	
-	f(&p);
-	printf("%d\n", *p);
-
+	InputStudent(&st); //对结构体变量输入 必须发送st的地址
+	//printf("%d %c %s\n", st.age, st.sex, st.name);
+	OutputStudent(&st); //对结构体变量输出 可以发送st的地址，也可以直接发送st的内容,但为了减少内存耗费，也为了提高运行速度，推荐使用发送地址
+	
 	return 0;
 }
-
-
-
 
 
 
