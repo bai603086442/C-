@@ -1,6 +1,272 @@
 ﻿#include <stdio.h>
 #include <malloc.h>
 #include <string.h>
+
+#include <stdio.h>
+
+//max是函数的名字, i和j是形式参数，void表示函数没有返回值
+//void max(int i, int j)
+//{
+//	if (i > j)
+//		printf("%d\n", i);
+//	else
+//		printf("%d\n", j);
+//}
+
+//int main(void)
+//{
+	//if只能控制AAAA的执行；一行；
+	//if (3 > 2)
+	//	printf("AAAA\n");
+	//	printf("BBBB\n");
+
+	//if (1 > 2)
+	//	printf("AAAA\n");
+	//	printf("BBBB\n");
+
+
+	////if可控制AAAA  BBBB
+	//if (1 > 2) {
+	//	printf("AAAA\n");
+	//	printf("BBBB\n");
+	//}
+
+	/*int i, j;
+
+	scanf_s("%d %d", &i, &j);
+
+	if (i > j)
+		printf("i大于j\n");
+	else
+		printf("i小于j\n");*/
+
+		/*double delta;
+
+		scanf_s("%lf", &delta);
+
+		if (delta > 0)
+			printf("有两个解\n");
+		else if (delta == 0)
+			printf("有一个唯一解\n");
+		else
+			printf("无解\n");*/
+
+			//float score;
+
+			//printf("请输入您的考试成绩:");
+
+			//scanf_s("%f", &score);
+
+			//if (score > 100)
+			//	printf("做梦\n");
+			//else if (score >= 90 && score <= 100) //不能写成90<=score<=100
+			//	printf("A\n");
+			//else if (score >= 80 && score <= 90)
+			//	printf("B\n");
+			//else
+			//	printf("C\n");
+
+
+			//互换两个数字
+			/*int i = 3;
+			int j = 4;
+
+			int t;
+			t = i;
+			i = j;
+			j = t;
+
+			printf("%d %d %d\n", i, j, t);*/
+
+			//三个数字由大到小排序
+			//int a, b, c; //2 5 3
+			//int t;
+			//printf("请输入三个整数(中间以空格分隔): ");
+			//scanf_s("%d %d %d", &a, &b, &c);
+
+			//if (a < b)
+			//{
+			//	t = a;
+			//	a = b;
+			//	b = t;
+			//}
+
+			//if (a < c)  
+			//{
+			//	t = a;
+			//	a = c;
+			//	c = t;
+			//}
+			//
+			//if (b < c)
+			//{
+			//	t = b;
+			//	b = c;
+			//	c = t;
+			//}
+
+			//printf("%d %d %d\n", a, b, c);  
+
+
+			/*int sum = 0;*/
+
+			//for (int i = 0; i <= 10; ++i)
+			//	/*sum = sum + i;*/
+
+			//printf("i = %d\n", i);
+
+			//求1到100之间的能被3整除的数字之和
+			//int i;
+			//int sum = 0
+			//	for (i = 1; i <= 100; ++i) 
+			//	{
+			//		if (i % 3 == 0)
+			//			sum = sum + i;
+			//	}
+
+			//int i;
+			//int sum = 0;
+			//int count = 0;
+			//float average;
+
+			//for (i = 1; i < 101; ++i)
+			//{
+			//	if (i % 2 == 1)
+			//	{
+			//		sum += i; //if默认只能控制一个语句
+			//		++count;
+			//	}
+			//}
+
+			//average = (float)sum / count; //1.0默认是double
+
+			//printf("count = %d\n", count);
+			//printf("average = %f\n", average);
+			//printf("sum = %d\n", sum);
+
+			//int i;
+			//int sum1 = 0;
+			//int sum2 = 0;
+
+			//for (i = 1; i < 101; ++i)
+			//{
+			//if (i % 2 == 1)
+			//{
+			//	sum1 += i;
+			//}
+			//else {
+			//	sum2 += i;
+			//}
+			//}
+
+			//printf("奇数和 =%d\n", sum1);
+			//printf("偶数和 =%d\n", sum2);
+
+			/*int i, j;
+
+			for (i = 0; i < 3; ++i)
+			{
+				printf("嘿嘿\n");
+				for (j = 2; j < 5; ++j)
+				{
+					printf("哈哈\n");
+					printf("嘻嘻\n");
+				}
+				printf("呜呜\n");
+			}*/
+
+			//int i = 1;
+			//int sum = 0;
+
+			//for (i = 1; i <= 100; ++i)
+			//{
+			//	sum = sum + i;
+			//}
+
+			/*while (i <= 100)
+			{
+				sum = sum + i;
+				++i;
+			}
+
+			printf("sum = %d\n", sum);
+			*/
+
+			//从键盘输入一个数字，如果该数字是回文数，则返回yes，否则返回no。回文数：正着写和倒着写一样。如32123
+
+			//int val = 0; //存放待判断的数字
+			//int m = 0;
+			//int sum = 0;
+
+			//printf("输入需要判断的数字:");
+			//scanf_s("%d", &val);
+
+			//m = val;
+			//while (m) //非0为真
+			//{
+			//	sum = sum * 10 + m % 10;
+			//		m /= 10;
+			//}
+
+			//if (sum == val)
+			//	printf("yes\n");
+			//else
+			//	printf("no\n");
+
+			//int val;
+
+			//printf("请输入您要进入的楼层：");
+			//scanf_s("%d", &val);
+
+			//switch (val)
+			//{
+			//case 1:
+			//	printf("1楼\n");
+			//	//break;
+			//case 2:
+			//	printf("2楼\n");
+			//	break;
+			//case 3:
+			//	printf("3楼\n");
+			//	break;
+			//default:
+			//	printf("没这一层\n");
+			//	break;
+			//}
+
+			//int a[5] = {1, 2, 3, 4, 5};
+			//
+			//int i;
+
+			//for (i = 0; i < 5; ++i)
+			//	printf("%d\n", a[i]);
+
+
+			//int a[3][4] = {
+			//	{1, 2, 3, 4},
+			//	{5, 6, 7, 8},
+			//	{9, 10, 11, 12},
+			//};
+
+			//int i, j;
+			////输出数组内容
+			//for (i = 0; i < 3; ++i)
+			//{
+			//	for (j = 0; j < 4; ++j)
+			//		printf("%-2d  ",a[i][j]);
+			//	printf("\n");
+			//}
+
+			/*int a, b, c, d, e, f;
+
+			a = 1, b = 2, c = 3, d = 9, e = -5, f = 100;
+
+			max(a, b);
+			max(a, f);
+
+			return 0;*/
+}
+
 //int f(void) //括号中的void表示该函数不能接受数据 int表示函数返回值是int类型
 //{
 //	return 10;  //向主调函数返回10
@@ -767,43 +1033,160 @@ p,q,r本身所占的字节数是否一样
 //	printf("%d %c %s\n", pst->age, pst->sex, pst->name); //pst->age 转化成 (*pst).age 等于st.age
 //}
 
-struct Student
-{
-	int age;
-	char sex;
-	char name[100];
-}; 
-
-//此函数无法修改主函数 st的值   错误
-//void InputStudent(struct Student stu)
+//struct Student
 //{
-//	stu.age = 10;
-//	strcpy_s(stu.name, "张三"); //不能写成 stu.name = "张三";
-//	stu.sex = 'F';
+//	int age;
+//	char sex;
+//	char name[100];
+//}; 
+//
+////此函数无法修改主函数 st的值   错误
+////void InputStudent(struct Student stu)
+////{
+////	stu.age = 10;
+////	strcpy_s(stu.name, "张三"); //不能写成 stu.name = "张三";
+////	stu.sex = 'F';
+////}
+//
+//void InputStudent(struct Student* pstu) //pstu只占四个字符
+//{
+//	(*pstu).age = 10;
+//	strcpy_s(pstu->name, "张三");
+//	pstu->sex = 'F';
+//}
+//
+//void OutputStudent(struct Student* pst)
+//{
+//	printf("%d %c %s\n", pst->age, pst->sex, pst->name);
+//}
+//
+//int main(void)
+//{
+//	struct Student st;
+//	
+//	InputStudent(&st); //对结构体变量输入 必须发送st的地址
+//	//printf("%d %c %s\n", st.age, st.sex, st.name);
+//	OutputStudent(&st); //对结构体变量输出 可以发送st的地址，也可以直接发送st的内容,但为了减少内存耗费，也为了提高运行速度，推荐使用发送地址
+//	
+//	return 0;
 //}
 
-void InputStudent(struct Student* pstu) //pstu只占四个字符
-{
-	(*pstu).age = 10;
-	strcpy_s(pstu->name, "张三");
-	pstu->sex = 'F';
-}
+//冒泡排序
+//void sort(int* a, int len)
+//{
+//	int i, j, t;
+//
+//	for (i = 0; i < len - 1; ++i) 
+//	{
+//		for (j = 0; j < len - 1 - i; ++j) 
+//		{
+//			if (a[j] > a[j + 1]) 
+//			{
+//				t = a[j];
+//				a[j] = a[j + 1];
+//				a[j + 1] = t;
+//			}
+//		}
+//	}
+//}
+//
+//int main(void)
+//{
+//	int a[6] = {10, 2, 8, -8, 11, 0};
+//	int i = 0;
+//
+//	sort(a, 6);
+//
+//	for (i = 0; i < 6; ++i) 
+//	{
+//		printf("%d ", a[i]);
+//	}
+//	printf("\n");
+//
+//	return 0;
+//}
 
-void OutputStudent(struct Student* pst)
-{
-	printf("%d %c %s\n", pst->age, pst->sex, pst->name);
-}
+//学生管理系统1.0
+//struct Student
+//{
+//	int age;
+//	float score;
+//	char name[100];
+//};
+//
+//int main(void)
+//{
+//	int len;
+//	struct Student* pArr;
+//	int i;
+//
+//	//动态构造一维数组
+//	printf("请输入学生的个数:\n");
+//	printf("len = ");
+//	scanf_s("%d", &len);
+//	pArr = (struct Student*)malloc(len * sizeof(struct Student));
+//
+//	for (i = 0; i < len; ++i) 
+//	{
+//		printf("请输入第%d个学生的信息:\n", i + 1);
+//
+//		printf("age = ");
+//		scanf_s("%d", &pArr[i].age);
+//
+//		printf("name = ");
+//		scanf_s("%s", pArr[i].name); //不需要加&，因为name是数组名，本身就已经是数组首元素的地址
+//
+//		printf("score = ");
+//		scanf_s("%f", &pArr[i].score);
+//
+//	}
+//
+//	//输出
+//	for (i = 0; i < len; ++i)
+//	{
+//		printf("第%d个学生的信息:\n", i + 1);
+//		printf("age = %d\n", pArr[i].age);
+//		
+//		printf("name = %s\n", pArr[i].name);
+//		
+//		printf("score = %f\n", pArr[i].score);
+//		
+//		printf("\n");
+//	}
+//
+//	return 0;
+//
+//}
 
-int main(void)
-{
-	struct Student st;
-	
-	InputStudent(&st); //对结构体变量输入 必须发送st的地址
-	//printf("%d %c %s\n", st.age, st.sex, st.name);
-	OutputStudent(&st); //对结构体变量输出 可以发送st的地址，也可以直接发送st的内容,但为了减少内存耗费，也为了提高运行速度，推荐使用发送地址
-	
-	return 0;
-}
+//枚举
+//只定义了一个数据类型，没有定义变量，该数据类型的名字是enum WeekDay
+//enum WeekDay
+//{
+//	MonDay, TuesDay, WednesDay, ThursDay, Friday, SaturDay, SunDay
+//};
+//
+//int main(void)
+//{
+//	//int day; //day定义为int类型不合适
+//	enum WeekDay day = SaturDay;
+//	printf("%d\n", day);
+//
+//	return 0;
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
